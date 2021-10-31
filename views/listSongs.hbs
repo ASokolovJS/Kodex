@@ -1,0 +1,36 @@
+<div> 
+   <h1>Список песен</h1> 
+  <table >
+    <thead>
+      <th>Название песни</th>
+      <th>Исполнитель</th>
+      <th>Действие</th>
+    </thead>
+    <tbody> 
+      {{#each songs}}
+      <td><a href="/songs/cardSong/{{id}}">{{title}}</a></td>
+      <td>{{singerId}}</td>
+      <td>
+        <form action="/songs/remove" method="POST">
+          <input type="hidden" name="songId" value="{{id}}" >
+          <button type="submit">Удалить</button>
+        </form>
+      </td>
+    </tbody>
+    {{/each}}
+  </table>
+ 
+  <h3>Добавить песню</h3>
+  <form action="/songs/create" method="POST">
+    <p>
+      Название песни:
+    <input type="text" name="titleSong" value="" required>
+    </p>
+    <p>
+      Исполнитель:
+    <input type="text" name="name" value="" required>
+    </p>
+    <button type="submit">Добавить</button>
+  </form>
+  <a href="/">Вернуться на главную</a>
+</div>

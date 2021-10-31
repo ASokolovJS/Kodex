@@ -1,0 +1,16 @@
+Карточка пенси - {{song.title}}
+
+<form action="/songs/update" method="POST">
+  <ul>
+    <li>
+      Имя песни
+      <input type="text" name="newTitle" value="{{song.title}}">
+    </li>
+    <li>
+      Дата добавления: {{song.date}}
+    </li>
+  </ul>
+  <input type="hidden" name="id" value="{{song.id}}">
+  <button type="submit">Сохранить изменения</button>
+</form>
+<a href="/songs">Вернуться назад</a>

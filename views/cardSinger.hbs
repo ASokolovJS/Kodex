@@ -1,0 +1,25 @@
+<h3>Карточка исполнителя - {{singer.name}}</h3>
+<form action="/singer/update" method="Post">
+  <ul>
+    <li>
+      Имя исполнителя
+      <input type="text" name="newName" value="{{singer.name}}">
+    </li>
+    <li>
+      Количество песен: {{titleSongs.length}}
+    </li>
+    <li>
+      Список песен:
+      <ol>
+        {{#each titleSongs}}
+        <li>
+         <a href="/songs/cardSong/{{id}}">{{title}}</a> 
+        </li>
+        {{/each}}
+      </ol>
+    </li>
+  </ul>
+  <input type="hidden" name="id" value="{{singer.id}}">
+  <button type="submit">Сохранить изменения</button>
+</form>
+<a href="/singer/">Вернуться назад</a>

@@ -1,0 +1,56 @@
+<div>
+  <h1>Каталог музыки</h1>
+  <p>
+    <a href="/singer">Список исполнителей</a>
+  </p>
+  <p>
+    <a href="/songs">Список песен</a>
+  </p>
+  <p>
+    <form action="/searchByName" method="POST">
+      Введите название:
+      <input type="text" name="title" />
+      <select name="select">
+        <option value="singer">Исполнитель</option>
+        <option value="song">Песня</option>
+      </select>
+      <button type="submit">Получить список</button>
+    </form>
+  </p>
+  <p>
+    <form action="/searchByDate" method="POST">
+      Введите дату:
+      <input type="date" name="date" />
+      <select name="select">
+        <option value="singer">Исполнитель</option>
+        <option value="song">Песня</option>
+      </select>
+      <button type="submit">Получить список</button>
+    </form>
+  </p>
+  <p>
+    <form action="/getList" method="POST">
+      Получить список
+      <select name="select">
+        <option value="singer">Исполнителей</option>
+        <option value="song">Песен</option>
+      </select>
+      От
+      <select name="value">
+        <option value="0">0-10</option>
+        <option value="10">10-20</option>
+        <option value="20">20-30</option>
+        <option value="30">30-40</option>
+        <option value="40">40-50</option>
+      </select>
+      <button type="submit">Получить список</button>
+    </form>
+  </p>
+  <p>
+    <form action="/searchAllSongs" method="POST">
+      Введите исполнителя(лей):
+      <input type="text" name="singers" />
+      <button type="submit">Получить список</button>
+    </form>
+  </p>
+</div>

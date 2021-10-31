@@ -1,0 +1,29 @@
+<div> 
+   <h1>Список исполнителей</h1>
+  <table >
+    <thead>
+      <th>Имя исполнителя</th>
+      <th>Дата добавления</th>
+      <th>Действие</th>
+    </thead>
+    {{#each sing}}
+    <tbody>
+      <td> <a href="/singer/cardSinger/{{id}}">{{name}}</a></td>
+      <td>{{date}}</td>
+      <td>
+        <form action="/singer/remove" method="POST">
+          <input type="hidden" name="singerId" value="{{id}}" >
+          <button type="submit">Удалить</button>
+        </form>
+      </td>
+    </tbody>
+    {{/each}}
+  </table>
+ 
+  <h3>Добавить исполнителя</h3>
+  <form action="/singer/create" method="POST">
+    <input type="text" name="name" value="" required>
+    <button type="submit">Добавить</button>
+  </form>
+  <a href="/">Вернуться на главную</a>
+</div>
